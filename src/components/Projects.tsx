@@ -75,7 +75,7 @@ const upcomingProjects = [
     description: "Just drag and drop your project files (or pick them from your file manager).The AI reads your code, understands your APIs, and instantly generates front-end code in react",
     tags: ["gemini api" , "node.js"],
     gradient: "from-primary/20 to-accent/20",
-    status: "In Planning"
+    status: "Building"
   }
 ];
 
