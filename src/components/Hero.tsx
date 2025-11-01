@@ -22,10 +22,10 @@ const Hero = () => {
       <ScrollReveal delay={1000}>
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            <span className="block text-foreground mb-3">Naga Durga Prasad Chunduru</span>
-            <span className="block text-2xl md:text-3xl lg:text-4xl bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+            <span className="block text-2xl md:text-3xl lg:text-4xl bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent mb-3">
               Backend Developer & Data Analyst
             </span>
+            <span className="block text-foreground">Naga Durga Prasad Chunduru</span>
           </h1>
           
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
