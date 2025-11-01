@@ -6,7 +6,7 @@ const skills = [
   {
     icon: Server,
     title: "Backend Development",
-    items: ["Node.js", "Python", "Java", "REST APIs", "GraphQL"]
+    items: ["Node.js", "Python", "Go", "REST APIs", "GraphQL"]
   },
   {
     icon: Database,
@@ -16,7 +16,7 @@ const skills = [
   {
     icon: BarChart3,
     title: "Data Analysis",
-    items: ["Python", "Pandas", "SQL", "Tableau", "Power BI"]
+    items: ["Python", "Pandas", "SQL", "Power BI", "NumPy"]
   },
   {
     icon: Code2,
@@ -24,14 +24,9 @@ const skills = [
     items: ["TypeScript", "Python", "Java", "Go", "Rust"]
   },
   {
-    icon: GitBranch,
-    title: "DevOps",
-    items: ["Docker", "Kubernetes", "CI/CD", "AWS", "Linux"]
-  },
-  {
     icon: Terminal,
     title: "Tools",
-    items: ["Git", "VS Code", "Postman", "Jupyter", "bash"]
+    items: ["Git", "VS Code", "Postman", "Jupyter", "Docker"]
   }
 ];
 
@@ -50,7 +45,7 @@ const Skills = () => {
           </div>
         </ScrollReveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {skills.map((skill, index) => (
             <ScrollReveal key={skill.title} delay={1000 + index * 100}>
               <Card className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] group h-full">
