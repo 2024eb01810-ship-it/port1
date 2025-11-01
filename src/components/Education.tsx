@@ -24,22 +24,28 @@ const education = [
 
 const certifications = [
   {
-    title: "Google Certification 1",
+    title: "Gemini for Data Scientists and Analysts",
     issuer: "Google",
     icon: Award,
-    gradient: "from-primary/20 to-secondary/40"
+    gradient: "https://www.skills.google/public_profiles/bd8e870c-864a-4098-baac-9bb48da9e045/badges/17181964"
   },
   {
-    title: "Google Certification 2",
+    title: "Machine Learning Operations (MLOps) for Generative AI",
     issuer: "Google",
     icon: Award,
-    gradient: "from-secondary/40 to-accent/20"
+    gradient: "https://www.skills.google/public_profiles/bd8e870c-864a-4098-baac-9bb48da9e045/badges/17153853"
   },
   {
-    title: "Google Certification 3",
+    title: "Build Real World AI Applications with Gemini and Imagen",
     issuer: "Google",
     icon: Award,
-    gradient: "from-accent/20 to-primary/20"
+    gradient: "https://www.skills.google/public_profiles/bd8e870c-864a-4098-baac-9bb48da9e045/badges/16361436"
+  },
+  {
+    title: "Prompt Design in Vertex AI",
+    issuer: "Google",
+    icon: Award,
+    gradient: "https://www.skills.google/public_profiles/bd8e870c-864a-4098-baac-9bb48da9e045/badges/16356378"
   }
 ];
 
