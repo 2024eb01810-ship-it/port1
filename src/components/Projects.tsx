@@ -28,7 +28,45 @@ const projects = [
     gradient: "from-primary/20 to-secondary/40",
     github: "https://github.com/ndp-coder",
     demo: "https://auto-swagger-mind.lovable.app/"
+  }, 
+  {
+    title: "prescription dispensing system",
+    description: "Built in Go, this system streamlines pharmacy operations by automating prescription verification, stock management, and safe medicine dispensing with complete traceability.",
+    tags: ["go" , "postgresql" , "redsi" , "rest api" , "gin"],
+    gradient: "from-primary/20 to-secondary/40",
+    github: "https://github.com/ndp-coder/pds",
+  },
+  {
+    title: "Offline-First Data Sync Platform",
+    description: "Developed a Go-based backend using Gin, Redis, and PostgreSQL to handle offline data collection in rural healthcare projects. Redis stores records when the network is unavailable. PostgreSQL sync ensures data consistency once online. RESTful APIs for saving, fetching, and syncing data. Improved data reliability and reduced manual entry errors.",
+    tags: ["go" , "postgresql" , "redsi" , "rest api" , "gin"],
+    gradient: "from-primary/20 to-secondary/40",
+    github: "https://github.com/ndp-coder/dataCollectionFromPeople",
+  },
+  {
+    title: "Movie Ticket Booking backend ",
+    description: "A Go-based web application enabling real-time seat selection, payment integration, and booking management with concurrency-safe APIs and database-backed scheduling.",
+    tags: ["go" , "postgresql" , "redsi" , "rest api" , "gin"],
+    gradient: "from-primary/20 to-secondary/40",
+    github: "https://github.com/ndp-coder/bookmyshow-go1",
+  },
+  {
+    title: "Ecommerce backend ",
+    description: "A scalable Go-powered backend handling product management, user authentication, and order processing with secure APIs and optimized database performance.",
+    tags: ["go" , "postgresql" , "redsi" , "rest api"],
+    gradient: "from-primary/20 to-secondary/40",
+    github: "https://github.com/ndp-coder/ecommers-go1",
+  },
+  {
+    title: "Finance Tracker  ",
+    description: "A Go-based backend system for managing income, expenses, and analytics with secure data storage and real-time financial summaries.",
+    tags: ["go" , "postgresql" , "redsi" , "rest api" , "gin"],
+    gradient: "from-primary/20 to-secondary/40",
+    github: "https://github.com/ndp-coder/fainance-tracker-go",
   }
+  
+  
+  
 ];
 
 const upcomingProjects = [
