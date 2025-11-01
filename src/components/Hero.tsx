@@ -20,15 +20,15 @@ const Hero = () => {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-glow" style={{ animationDelay: "1s" }} />
       
       <ScrollReveal delay={1000}>
-        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            <span className="block text-foreground mb-2">Naga Durga Prasad Chunduru</span>
-            <span className="block bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
+        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+            <span className="block text-foreground mb-3">Naga Durga Prasad Chunduru</span>
+            <span className="block text-2xl md:text-3xl lg:text-4xl bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
               Backend Developer & Data Analyst
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Crafting robust systems and transforming data into actionable insights
           </p>
           
