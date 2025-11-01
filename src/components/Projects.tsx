@@ -6,60 +6,38 @@ import ScrollReveal from "./ScrollReveal";
 
 const projects = [
   {
-    title: "Real-Time Analytics Dashboard",
-    description: "Built a high-performance analytics platform processing millions of events daily. Features real-time data visualization and custom reporting.",
-    tags: ["Python", "PostgreSQL", "Redis", "React"],
+    title: "Q and A generator",
+    description: "Built an AI-powered Question and Answer generator using Gemini AIAPI to dynamically create answers based on user input. Implemented Razorpay Payment Gateway for secure transactionhandling, allowing users to access premium features after successfulpayment.",
+    tags: ["html" , "css" , "js" , "express.js" , "node.js"],
     gradient: "from-primary/20 to-accent/20",
     github: "https://github.com/ndp-coder",
-    demo: "#"
+    demo: "https://qandagenerator.netlify.app/"
   },
   {
-    title: "Microservices Architecture",
-    description: "Designed and implemented scalable microservices backend with API gateway, service mesh, and distributed tracing.",
-    tags: ["Node.js", "Docker", "Kubernetes", "MongoDB"],
+    title: "Mentor.ai",
+    description: " Developed the front-end user interface using HTML, CSS, andJavaScript, focusing on responsive design and accessibility. Implemented client-side data fetching and manipulation usingasynchronous JavaScript, interacting with the Gemini API for AI-powered mentorship suggestions. It is built by giving 1000+ lines of prompt. Designed and implemented a PostgreSQL database schema to storeuser profiles, mentorship preferences, and AI interaction history.",
+    tags: ["HTML", "CSS", "Java Script", "postgresql" , "gemini api" ],
     gradient: "from-accent/20 to-primary/20",
     github: "https://github.com/ndp-coder",
-    demo: "#"
+    demo: "https://coustmizeai.netlify.app/"
   },
   {
-    title: "Data Pipeline Automation",
-    description: "Created ETL pipelines for data extraction, transformation, and loading. Automated workflows reduced processing time by 70%.",
-    tags: ["Python", "Airflow", "Spark", "SQL"],
+    title: "Auto swaggers ",
+    description: "Just drag and drop your project files (or pick them from your file manager). The AI reads your code, understands your APIs, and instantly generates Swagger annotations and JSON docs.",
+    tags: ["node.js" ,"postgresql" , "gemini api" ],
     gradient: "from-primary/20 to-secondary/40",
     github: "https://github.com/ndp-coder",
-    demo: "#"
-  },
-  {
-    title: "Machine Learning API",
-    description: "Developed REST API serving ML models for predictive analytics. Handles 10k+ requests per minute with 99.9% uptime.",
-    tags: ["Python", "FastAPI", "TensorFlow", "AWS"],
-    gradient: "from-secondary/40 to-accent/20",
-    github: "https://github.com/ndp-coder",
-    demo: "#"
+    demo: "https://auto-swagger-mind.lovable.app/"
   }
 ];
 
 const upcomingProjects = [
   {
-    title: "AI-Powered Code Review System",
-    description: "Building an intelligent code review assistant using GPT models to provide automated code quality checks and suggestions.",
-    tags: ["Python", "OpenAI", "NLP", "FastAPI"],
+    title: "DocuMind Ai",
+    description: "Just drag and drop your project files (or pick them from your file manager).The AI reads your code, understands your APIs, and instantly generates front-end code in react",
+    tags: ["gemini api" , "node.js"],
     gradient: "from-primary/20 to-accent/20",
     status: "In Planning"
-  },
-  {
-    title: "Real-Time Collaboration Platform",
-    description: "Developing a WebSocket-based platform for real-time document collaboration with conflict resolution.",
-    tags: ["Node.js", "WebSocket", "MongoDB", "React"],
-    gradient: "from-accent/20 to-primary/20",
-    status: "Research Phase"
-  },
-  {
-    title: "Blockchain Analytics Tool",
-    description: "Creating a comprehensive analytics dashboard for tracking and analyzing blockchain transactions and smart contracts.",
-    tags: ["Python", "Web3", "PostgreSQL", "D3.js"],
-    gradient: "from-primary/20 to-secondary/40",
-    status: "Starting Soon"
   }
 ];
 
