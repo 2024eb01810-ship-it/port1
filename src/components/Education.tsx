@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { GraduationCap, Award, BookOpen } from "lucide-react";
+import { GraduationCap, Award, BookOpen, ChevronDown } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
 const education = [
@@ -43,6 +44,8 @@ const certifications = [
 ];
 
 const Education = () => {
+  const [expandedEducation, setExpandedEducation] = useState(false);
+
   return (
     <section id="education" className="py-20 px-4 bg-secondary/20">
       <div className="max-w-7xl mx-auto">
@@ -61,34 +64,78 @@ const Education = () => {
           <ScrollReveal delay={1100}>
             <h3 className="text-2xl font-bold mb-8 text-center">Education</h3>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {education.map((edu, index) => (
-              <ScrollReveal key={edu.institution} delay={1000 + index * 100}>
-                <Card className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 group h-full">
-                  <div className={`h-2 w-full rounded-t-lg bg-gradient-to-r ${edu.gradient} mb-6 group-hover:h-3 transition-all`} />
-
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                      <edu.icon className="h-6 w-6 text-primary" />
+          <div className="flex justify-center">
+            <div className="w-full max-w-2xl">
+              <ScrollReveal delay={1100}>
+                <Card
+                  onClick={() => setExpandedEducation(!expandedEducation)}
+                  className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 group h-full cursor-pointer"
+                >
+                  <div className="flex flex-col items-center text-center gap-4">
+                    <div className="p-4 bg-primary/10 group-hover:bg-primary/20 rounded-lg transition-colors">
+                      <GraduationCap className="h-8 w-8 text-primary" />
                     </div>
-                    <div className="flex-1">
-                      <h4 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
-                        {edu.institution}
-                      </h4>
-                      <p className="text-lg font-semibold mb-1 text-muted-foreground">
-                        {edu.degree}
-                      </p>
-                      <p className="text-sm text-accent font-medium mb-3">
-                        {edu.year}
-                      </p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {edu.description}
-                      </p>
-                    </div>
+                    <h4 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      Click on me to see Education Details
+                    </h4>
+                    <p className="text-muted-foreground">
+                      Expand to view your education information
+                    </p>
+                    <ChevronDown
+                      className={`h-6 w-6 text-primary transition-transform duration-300 mt-2 ${
+                        expandedEducation ? "rotate-180" : ""
+                      }`}
+                    />
                   </div>
                 </Card>
               </ScrollReveal>
-            ))}
+
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-out ${
+                  expandedEducation ? "max-h-96 opacity-100 mt-6" : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {education.map((edu, index) => (
+                    <div
+                      key={edu.institution}
+                      className={`transition-all duration-500 ease-out transform ${
+                        expandedEducation
+                          ? "translate-y-0 opacity-100"
+                          : "-translate-y-4 opacity-0"
+                      }`}
+                      style={{
+                        transitionDelay: expandedEducation ? `${index * 150}ms` : "0ms"
+                      }}
+                    >
+                      <Card className="p-6 bg-card border-border hover:border-primary/50 transition-all duration-300 group h-full">
+                        <div className={`h-2 w-full rounded-t-lg bg-gradient-to-r ${edu.gradient} mb-6 group-hover:h-3 transition-all`} />
+
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                            <edu.icon className="h-6 w-6 text-primary" />
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">
+                              {edu.institution}
+                            </h4>
+                            <p className="text-lg font-semibold mb-1 text-muted-foreground">
+                              {edu.degree}
+                            </p>
+                            <p className="text-sm text-accent font-medium mb-3">
+                              {edu.year}
+                            </p>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {edu.description}
+                            </p>
+                          </div>
+                        </div>
+                      </Card>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
