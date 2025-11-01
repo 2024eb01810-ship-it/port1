@@ -45,6 +45,7 @@ const certifications = [
 
 const Education = () => {
   const [expandedEducation, setExpandedEducation] = useState(false);
+  const [expandedCertifications, setExpandedCertifications] = useState(false);
 
   return (
     <section id="education" className="py-20 px-4 bg-secondary/20">
@@ -143,26 +144,70 @@ const Education = () => {
           <ScrollReveal delay={1300}>
             <h3 className="text-2xl font-bold mb-8 text-center">Certifications</h3>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.map((cert, index) => (
-              <ScrollReveal key={cert.title} delay={1000 + index * 100}>
-                <Card className="p-6 bg-card border-border hover:border-accent/50 transition-all duration-300 group h-full">
-                  <div className={`h-2 w-full rounded-t-lg bg-gradient-to-r ${cert.gradient} mb-6 group-hover:h-3 transition-all`} />
-
-                  <div className="flex flex-col items-center text-center">
-                    <div className="p-4 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors mb-4">
-                      <cert.icon className="h-8 w-8 text-accent" />
+          <div className="flex justify-center">
+            <div className="w-full max-w-4xl">
+              <ScrollReveal delay={1300}>
+                <Card
+                  onClick={() => setExpandedCertifications(!expandedCertifications)}
+                  className="p-8 bg-card border-border hover:border-accent/50 transition-all duration-300 group h-full cursor-pointer"
+                >
+                  <div className="flex flex-col items-center text-center gap-4">
+                    <div className="p-4 bg-accent/10 group-hover:bg-accent/20 rounded-lg transition-colors">
+                      <Award className="h-8 w-8 text-accent" />
                     </div>
-                    <h4 className="text-lg font-bold mb-2 text-foreground group-hover:text-accent transition-colors">
-                      {cert.title}
+                    <h4 className="text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
+                      Click on me to see Certifications
                     </h4>
-                    <p className="text-sm text-muted-foreground font-medium">
-                      Issued by {cert.issuer}
+                    <p className="text-muted-foreground">
+                      Expand to view your certifications
                     </p>
+                    <ChevronDown
+                      className={`h-6 w-6 text-accent transition-transform duration-300 mt-2 ${
+                        expandedCertifications ? "rotate-180" : ""
+                      }`}
+                    />
                   </div>
                 </Card>
               </ScrollReveal>
-            ))}
+
+              <div
+                className={`overflow-hidden transition-all duration-500 ease-out ${
+                  expandedCertifications ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {certifications.map((cert, index) => (
+                    <div
+                      key={cert.title}
+                      className={`transition-all duration-500 ease-out transform ${
+                        expandedCertifications
+                          ? "translate-y-0 opacity-100"
+                          : "-translate-y-4 opacity-0"
+                      }`}
+                      style={{
+                        transitionDelay: expandedCertifications ? `${index * 150}ms` : "0ms"
+                      }}
+                    >
+                      <Card className="p-6 bg-card border-border hover:border-accent/50 transition-all duration-300 group h-full">
+                        <div className={`h-2 w-full rounded-t-lg bg-gradient-to-r ${cert.gradient} mb-6 group-hover:h-3 transition-all`} />
+
+                        <div className="flex flex-col items-center text-center">
+                          <div className="p-4 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors mb-4">
+                            <cert.icon className="h-8 w-8 text-accent" />
+                          </div>
+                          <h4 className="text-lg font-bold mb-2 text-foreground group-hover:text-accent transition-colors">
+                            {cert.title}
+                          </h4>
+                          <p className="text-sm text-muted-foreground font-medium">
+                            Issued by {cert.issuer}
+                          </p>
+                        </div>
+                      </Card>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
