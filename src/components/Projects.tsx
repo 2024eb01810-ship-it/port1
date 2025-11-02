@@ -117,21 +117,21 @@ const Projects = () => {
           <ScrollReveal delay={1100}>
             <h3 className="text-2xl font-bold mb-8 text-center">Completed Projects</h3>
           </ScrollReveal>
-          <div className="flex justify-center">
+          <div className="flex justify-center px-4">
             <div className="w-full max-w-6xl">
               <ScrollReveal delay={1100}>
                 <Card
                   onClick={() => setExpandedProjects(!expandedProjects)}
-                  className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 group h-full cursor-pointer"
+                  className="p-4 md:p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 group h-full cursor-pointer"
                 >
                   <div className="flex flex-col items-center text-center gap-4">
                     <div className="p-4 bg-primary/10 group-hover:bg-primary/20 rounded-lg transition-colors">
                       <FolderGit2 className="h-8 w-8 text-primary" />
                     </div>
-                    <h4 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    <h4 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                       Click on me to see Completed Projects
                     </h4>
-                    <p className="text-muted-foreground">
+                    <p className="text-sm md:text-base text-muted-foreground">
                       Expand to view all completed projects
                     </p>
                     <ChevronDown
@@ -152,7 +152,7 @@ const Projects = () => {
                   maxHeight: expandedProjects ? `${projectsHeight}px` : "0px"
                 }}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6">
                   {projects.map((project, index) => (
                     <div
                       key={project.title}
@@ -220,21 +220,21 @@ const Projects = () => {
           <ScrollReveal delay={1300}>
             <h3 className="text-2xl font-bold mb-8 text-center">Upcoming Projects</h3>
           </ScrollReveal>
-          <div className="flex justify-center">
+          <div className="flex justify-center px-4">
             <div className="w-full max-w-6xl">
               <ScrollReveal delay={1300}>
                 <Card
                   onClick={() => setExpandedUpcoming(!expandedUpcoming)}
-                  className="p-8 bg-card border-border hover:border-accent/50 transition-all duration-300 group h-full cursor-pointer"
+                  className="p-4 md:p-8 bg-card border-border hover:border-accent/50 transition-all duration-300 group h-full cursor-pointer"
                 >
                   <div className="flex flex-col items-center text-center gap-4">
                     <div className="p-4 bg-accent/10 group-hover:bg-accent/20 rounded-lg transition-colors">
                       <Clock className="h-8 w-8 text-accent" />
                     </div>
-                    <h4 className="text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
+                    <h4 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
                       Click on me to see Upcoming Projects
                     </h4>
-                    <p className="text-muted-foreground">
+                    <p className="text-sm md:text-base text-muted-foreground">
                       Expand to view projects in development
                     </p>
                     <ChevronDown
@@ -255,7 +255,7 @@ const Projects = () => {
                   maxHeight: expandedUpcoming ? `${upcomingHeight}px` : "0px"
                 }}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {upcomingProjects.map((project, index) => (
                     <div
                       key={project.title}

@@ -87,21 +87,21 @@ const Education = () => {
           <ScrollReveal delay={1100}>
             <h3 className="text-2xl font-bold mb-8 text-center">Education</h3>
           </ScrollReveal>
-          <div className="flex justify-center">
+          <div className="flex justify-center px-4">
             <div className="w-full max-w-2xl">
               <ScrollReveal delay={1100}>
                 <Card
                   onClick={() => setExpandedEducation(!expandedEducation)}
-                  className="p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 group h-full cursor-pointer"
+                  className="p-4 md:p-8 bg-card border-border hover:border-primary/50 transition-all duration-300 group h-full cursor-pointer"
                 >
                   <div className="flex flex-col items-center text-center gap-4">
                     <div className="p-4 bg-primary/10 group-hover:bg-primary/20 rounded-lg transition-colors">
                       <GraduationCap className="h-8 w-8 text-primary" />
                     </div>
-                    <h4 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    <h4 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                       Click on me to see Education Details
                     </h4>
-                    <p className="text-muted-foreground">
+                    <p className="text-sm md:text-base text-muted-foreground">
                       Expand to view your education information
                     </p>
                     <ChevronDown
@@ -122,7 +122,7 @@ const Education = () => {
                   maxHeight: expandedEducation ? `${educationHeight}px` : "0px"
                 }}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6">
                   {education.map((edu, index) => (
                     <div
                       key={edu.institution}
@@ -170,21 +170,21 @@ const Education = () => {
           <ScrollReveal delay={1300}>
             <h3 className="text-2xl font-bold mb-8 text-center">Certifications</h3>
           </ScrollReveal>
-          <div className="flex justify-center">
+          <div className="flex justify-center px-4">
             <div className="w-full max-w-4xl">
               <ScrollReveal delay={1300}>
                 <Card
                   onClick={() => setExpandedCertifications(!expandedCertifications)}
-                  className="p-8 bg-card border-border hover:border-accent/50 transition-all duration-300 group h-full cursor-pointer"
+                  className="p-4 md:p-8 bg-card border-border hover:border-accent/50 transition-all duration-300 group h-full cursor-pointer"
                 >
                   <div className="flex flex-col items-center text-center gap-4">
                     <div className="p-4 bg-accent/10 group-hover:bg-accent/20 rounded-lg transition-colors">
                       <Award className="h-8 w-8 text-accent" />
                     </div>
-                    <h4 className="text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
+                    <h4 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors">
                       Click on me to see Certifications
                     </h4>
-                    <p className="text-muted-foreground">
+                    <p className="text-sm md:text-base text-muted-foreground">
                       Expand to view your certifications
                     </p>
                     <ChevronDown
@@ -205,7 +205,7 @@ const Education = () => {
                   maxHeight: expandedCertifications ? `${certHeight}px` : "0px"
                 }}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {certifications.map((cert, index) => (
                     <div
                       key={cert.title}
