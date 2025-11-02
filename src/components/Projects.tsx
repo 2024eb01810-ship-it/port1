@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, FolderGit2, Clock, ChevronDown } from "lucide-react";
@@ -82,6 +82,22 @@ const upcomingProjects = [
 const Projects = () => {
   const [expandedProjects, setExpandedProjects] = useState(false);
   const [expandedUpcoming, setExpandedUpcoming] = useState(false);
+  const [projectsHeight, setProjectsHeight] = useState(0);
+  const [upcomingHeight, setUpcomingHeight] = useState(0);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const upcomingRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (projectsRef.current) {
+      setProjectsHeight(projectsRef.current.scrollHeight);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (upcomingRef.current) {
+      setUpcomingHeight(upcomingRef.current.scrollHeight);
+    }
+  }, []);
 
   return (
     <section id="projects" className="py-20 px-4 bg-secondary/30">
@@ -128,9 +144,13 @@ const Projects = () => {
               </ScrollReveal>
 
               <div
+                ref={projectsRef}
                 className={`overflow-hidden transition-all duration-500 ease-out ${
-                  expandedProjects ? "max-h-[2000px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                  expandedProjects ? "opacity-100 mt-6" : "opacity-0"
                 }`}
+                style={{
+                  maxHeight: expandedProjects ? `${projectsHeight}px` : "0px"
+                }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {projects.map((project, index) => (
@@ -227,9 +247,13 @@ const Projects = () => {
               </ScrollReveal>
 
               <div
+                ref={upcomingRef}
                 className={`overflow-hidden transition-all duration-500 ease-out ${
-                  expandedUpcoming ? "max-h-[2000px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                  expandedUpcoming ? "opacity-100 mt-6" : "opacity-0"
                 }`}
+                style={{
+                  maxHeight: expandedUpcoming ? `${upcomingHeight}px` : "0px"
+                }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {upcomingProjects.map((project, index) => (

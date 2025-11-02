@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { GraduationCap, Award, BookOpen, ChevronDown } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
@@ -52,6 +52,22 @@ const certifications = [
 const Education = () => {
   const [expandedEducation, setExpandedEducation] = useState(false);
   const [expandedCertifications, setExpandedCertifications] = useState(false);
+  const [educationHeight, setEducationHeight] = useState(0);
+  const [certHeight, setCertHeight] = useState(0);
+  const educationRef = useRef<HTMLDivElement>(null);
+  const certRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (educationRef.current) {
+      setEducationHeight(educationRef.current.scrollHeight);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (certRef.current) {
+      setCertHeight(certRef.current.scrollHeight);
+    }
+  }, []);
 
   return (
     <section id="education" className="py-20 px-4 bg-secondary/20">
@@ -98,9 +114,13 @@ const Education = () => {
               </ScrollReveal>
 
               <div
+                ref={educationRef}
                 className={`overflow-hidden transition-all duration-500 ease-out ${
-                  expandedEducation ? "max-h-96 opacity-100 mt-6" : "max-h-0 opacity-0"
+                  expandedEducation ? "opacity-100 mt-6" : "opacity-0"
                 }`}
+                style={{
+                  maxHeight: expandedEducation ? `${educationHeight}px` : "0px"
+                }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {education.map((edu, index) => (
@@ -177,9 +197,13 @@ const Education = () => {
               </ScrollReveal>
 
               <div
+                ref={certRef}
                 className={`overflow-hidden transition-all duration-500 ease-out ${
-                  expandedCertifications ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                  expandedCertifications ? "opacity-100 mt-6" : "opacity-0"
                 }`}
+                style={{
+                  maxHeight: expandedCertifications ? `${certHeight}px` : "0px"
+                }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {certifications.map((cert, index) => (
